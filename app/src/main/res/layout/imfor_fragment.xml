@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tview1"
+        android:layout_width="79dp"
+        android:layout_height="wrap_content"
+        android:layout_x="160dp"
+        android:layout_y="250dp"
+        android:text="课程分类"
+        tools:layout_editor_absoluteX="147dp"
+        tools:layout_editor_absoluteY="97dp" />
+
+    <Button
+        android:id="@+id/btnmath"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_x="20dp"
+        android:layout_y="400dp"
+        android:drawableTop="@drawable/ic_computer_black_24dp"
+        android:text="数学"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="286dp" />
+
+    <Button
+        android:id="@+id/btncomputer"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_x="155dp"
+        android:layout_y="300dp"
+        android:drawableTop="@drawable/ic_computer_black_24dp"
+        android:text="计算机"
+        tools:layout_editor_absoluteX="186dp"
+        tools:layout_editor_absoluteY="156dp" />
+
+    <Button
+        android:id="@+id/btnenglish"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_x="20dp"
+        android:layout_y="300dp"
+        android:drawableTop="@drawable/ic_computer_black_24dp"
+        android:text="英语"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="156dp" />
+
+    <Button
+        android:id="@+id/btneconomy"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_x="290dp"
+        android:layout_y="300dp"
+        android:drawableTop="@drawable/ic_computer_black_24dp"
+        android:text="经济类"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="156dp" />
+
+    <Button
+        android:id="@+id/btnmind"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_x="290dp"
+        android:layout_y="400dp"
+        android:drawableTop="@drawable/ic_computer_black_24dp"
+        android:text="心理学"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="156dp" />
+
+    <Button
+        android:id="@+id/btnlaw"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_x="20dp"
+        android:layout_y="115dp"
+        android:drawableTop="@drawable/ic_computer_black_24dp"
+        android:text="法学"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="156dp" />
+
+    <TextView
+        android:id="@+id/tview2"
+        android:layout_width="92dp"
+        android:layout_height="32dp"
+        android:layout_x="160dp"
+        android:layout_y="65dp"
+        android:text="升学择业"
+        tools:layout_editor_absoluteX="132dp"
+        tools:layout_editor_absoluteY="54dp" />
+
+    <Button
+        android:id="@+id/btnyasi"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_x="155dp"
+        android:layout_y="400dp"
+        android:drawableTop="@drawable/ic_computer_black_24dp"
+        android:text="雅思托福"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="156dp" />
+
+    <Button
+        android:id="@+id/btnkaoyan"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_x="290dp"
+        android:layout_y="115dp"
+        android:drawableTop="@drawable/ic_computer_black_24dp"
+        android:text="考研专栏"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="156dp" />
+
+    <Button
+        android:id="@+id/btncet"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_x="155dp"
+        android:layout_y="115dp"
+        android:drawableTop="@drawable/ic_computer_black_24dp"
+        android:text="四六级"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="156dp" />
+
+
+</AbsoluteLayout>
