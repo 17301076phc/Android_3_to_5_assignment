@@ -24,6 +24,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.firstassignment.R;
+import com.example.firstassignment.Register;
 import com.example.firstassignment.listcourse;
 import com.example.firstassignment.ui.login.LoginViewModel;
 import com.example.firstassignment.ui.login.LoginViewModelFactory;
@@ -32,6 +33,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private LoginViewModel loginViewModel;
 
+    private TextView textregister;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,6 +82,15 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        textregister=(TextView)findViewById(R.id.register);
+        textregister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent  intent=new Intent(LoginActivity.this, Register.class);
+                startActivity(intent);
+            }
+        });
+
         TextWatcher afterTextChangedListener = new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -117,8 +128,7 @@ public class LoginActivity extends AppCompatActivity {
                 Intent intent=new Intent(LoginActivity.this, listcourse.class);
                 startActivity(intent);
                 loadingProgressBar.setVisibility(View.VISIBLE);
-                loginViewModel.login(usernameEditText.getText().toString(),
-                        passwordEditText.getText().toString());
+                loginViewModel.login(usernameEditText.getText().toString(),passwordEditText.getText().toString());
             }
         });
     }

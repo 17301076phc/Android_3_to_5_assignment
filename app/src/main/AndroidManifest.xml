@@ -10,11 +10,10 @@
         android:roundIcon="@mipmap/elearning"
         android:supportsRtl="true"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".Register"  android:theme="@style/Theme.AppCompat.Light"></activity>
         <activity
-            android:theme="@style/NoBarTheme"
-            android:name=".DetailCourse">
-
-        </activity>
+            android:name=".DetailCourse"
+            android:theme="@style/NoBarTheme"></activity>
         <activity
             android:name=".ui.login.LoginActivity"
             android:theme="@style/AppTheme" />
