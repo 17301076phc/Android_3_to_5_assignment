@@ -49,29 +49,14 @@ public class HomeFragment extends Fragment {
     }
 
     private void initCourse(){
-        Course english=new Course(" 英语",R.mipmap.english_icon);
+        Course english=new Course(" 英语",R.mipmap.englishpic_icon);
         courseList.add(english);
         Course gailvlun=new Course(" 概率论",R.mipmap.gailvlun_icon);
         courseList.add(gailvlun);
 
-        Course english1=new Course(" 英语",R.mipmap.english_icon);
+        Course english1=new Course(" 英语",R.mipmap.englishpic_icon);
         courseList.add(english);
         Course gailvlun1=new Course(" 概率论",R.mipmap.gailvlun_icon);
-        courseList.add(gailvlun);
-
-        Course english2=new Course(" 英语",R.mipmap.english_icon);
-        courseList.add(english);
-        Course gailvlun2=new Course(" 概率论",R.mipmap.gailvlun_icon);
-        courseList.add(gailvlun);
-
-        Course english3=new Course(" 英语",R.mipmap.english_icon);
-        courseList.add(english);
-        Course gailvlun3=new Course(" 概率论",R.mipmap.gailvlun_icon);
-        courseList.add(gailvlun);
-
-        Course english4=new Course(" 英语",R.mipmap.english_icon);
-        courseList.add(english);
-        Course gailvlun4=new Course(" 概率论",R.mipmap.gailvlun_icon);
         courseList.add(gailvlun);
     }
 }

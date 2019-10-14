@@ -82,10 +82,10 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="backgroundLayerName" value="ic_launcher_english_background" />
-                                      <entry key="foregroundImage" value="F:\FirstAssignment\app\src\main\res\mipmap-hdpi\english.png" />
-                                      <entry key="foregroundLayerName" value="ic_launcher_english_foreground" />
-                                      <entry key="outputName" value="english_icon" />
+                                      <entry key="backgroundLayerName" value="ic_launcher_englishpic_background" />
+                                      <entry key="foregroundImage" value="F:\FirstAssignment\app\src\main\res\mipmap-hdpi\englishpicture.png" />
+                                      <entry key="foregroundLayerName" value="ic_launcher_englishpic_foreground" />
+                                      <entry key="outputName" value="englishpic_icon" />
                                     </map>
                                   </option>
                                 </PersistentState>
