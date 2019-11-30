@@ -48,6 +48,7 @@ public class listcourse extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listcourse);
         initFragment();
+
         //获得ID
         mdrawlayout = (DrawerLayout) findViewById(R.id.draw_layout);
         mViewNavigation=(NavigationView)findViewById(R.id.navigation_view);

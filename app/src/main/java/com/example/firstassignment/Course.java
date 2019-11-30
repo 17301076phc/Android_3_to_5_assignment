@@ -1,6 +1,8 @@
 package com.example.firstassignment;
 
-public class Course {
+import java.io.Serializable;
+
+public class Course implements Serializable {
     private String name;
     private int imageid;
 
