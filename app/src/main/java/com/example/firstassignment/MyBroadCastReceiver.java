@@ -10,6 +10,6 @@ public class MyBroadCastReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        Log.d("tt","yyyyyyyyy");
+        Toast.makeText(context, "service connection has stopped!", Toast.LENGTH_SHORT).show();;
     }
 }

@@ -1,27 +1,44 @@
 package com.example.firstassignment;
 
-public class CourseIndro {
-    private String course_name_teacher;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
-    private String course_illustrate;
+import java.io.Serializable;
+import java.util.List;
+@Entity
+public class CourseIndro implements Serializable {
+    @PrimaryKey
+    private int id;
+    private String name;
+    private int imageid;
 
-    private String course_time;
-
-    private String time;
-
-    public String getCourse_name_teacher() {
-        return course_name_teacher;
+    public CourseIndro(int id,String name,int imageid){
+        this.id=id;
+        this.name=name;
+        this.imageid=imageid;
     }
 
-    public String getCourse_illustrate() {
-        return course_illustrate;
+    public int getId() {
+        return id;
     }
 
-    public String getCourse_time() {
-        return course_time;
+    public String getName(){
+        return name;
     }
 
-    public String getTime() {
-        return time;
+    public int getImageid() {
+           return imageid;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setImageid(int imageid) {
+     this.imageid = imageid;
+     }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

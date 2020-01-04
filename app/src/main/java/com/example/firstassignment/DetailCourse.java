@@ -20,13 +20,6 @@ import java.util.concurrent.Executors;
 //retrofit架构
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.http.GET;
-import retrofit2.http.POST;
 
 public class DetailCourse extends AppCompatActivity {
 
@@ -40,10 +33,6 @@ public class DetailCourse extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_course);
         initFragment();
-        /*
-        Intent intent1=new Intent("test");
-        intent1.setComponent(new ComponentName(getPackageName(),"com.example.firstassignment.MyBroadCastReceiver"));
-        sendBroadcast(intent1);*/
 
         syllabuscourse=(TextView)findViewById(R.id.syllabus);
         courintroduction=(TextView)findViewById(R.id.introduction);

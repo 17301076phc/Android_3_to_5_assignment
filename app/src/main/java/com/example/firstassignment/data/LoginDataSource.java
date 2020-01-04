@@ -13,11 +13,8 @@ public class LoginDataSource {
 
         try {
             // TODO: handle loggedInUser authentication
-            LoggedInUser fakeUser =
-                    new LoggedInUser(
-                            java.util.UUID.randomUUID().toString(),
-                            "fakr User");
-            return new Result.Success<>(fakeUser);
+            LoggedInUser User = new LoggedInUser(java.util.UUID.randomUUID().toString(), username);
+            return new Result.Success<>(User);
         } catch (Exception e) {
             return new Result.Error(new IOException("Error logging in", e));
         }

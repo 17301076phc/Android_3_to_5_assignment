@@ -15,4 +15,9 @@
         android:icon="@drawable/ic_build_black_24dp"
         android:title="设置" />
 
+    <item
+        android:id="@+id/nv_logout"
+        android:icon="@drawable/ic_logout_new_black_24dp"
+        android:title="注销" />
+
 </menu>

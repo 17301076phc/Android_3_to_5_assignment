@@ -1,5 +1,6 @@
 package com.example.firstassignment;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,37 +11,29 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
-import com.youth.banner.Banner;
-import com.youth.banner.BannerConfig;
-import com.youth.banner.Transformer;
-import com.youth.banner.listener.OnBannerListener;
-import com.youth.banner.loader.ImageLoader;
+import com.example.firstassignment.connectDB.CourseDB;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class HomeFragment extends Fragment{
 
-    private List<Course> courseList=new ArrayList<>();
-    private ArrayList imagepath;
-    private MyImageLoader myloader;
-    private Banner banner;
+    private List<CourseIndro> courseList;
+    private List<Images> imagepath;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View contentView=inflater.inflate(R.layout.home_fragment,container,false);
-        banner=(Banner) contentView.findViewById(R.id.banner);
         initCourse();
         initPicture();
-        initBanner();
-
-        CourseAdapter adapter = new CourseAdapter(getActivity(),courseList);
+        CourseAdapter adapter = new CourseAdapter(courseList,imagepath);
         RecyclerView recyclerView = (RecyclerView) contentView.findViewById(R.id.recycler_view);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
@@ -50,7 +43,7 @@ public class HomeFragment extends Fragment{
         adapter.setOnItemClickListener(new CourseAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                Course c=courseList.get(position);
+                CourseIndro c=courseList.get(position);
                 //Toast.makeText(getActivity(), "detail message of course", Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent(getActivity().getApplicationContext(),DetailCourse.class);
                 startActivity(intent);
@@ -68,52 +61,38 @@ public class HomeFragment extends Fragment{
     }
 
     private void initCourse(){
+        courseList=new ArrayList<>();
         for (int i=0;i<6;i++)
         {
-            Course english=new Course(" 英语",R.mipmap.englishpic_icon);
+            CourseIndro english=new CourseIndro(i," 英语",R.drawable.english_icon_web);
             courseList.add(english);
-            Course gailvlun=new Course(" 概率论",R.mipmap.gailvlun_icon);
-            courseList.add(gailvlun);
+            //CourseIndro gailvlun=new CourseIndro(" 概率论",R.mipmap.gailvlun_icon);
+           // courseList.add(gailvlun);
+            update(english);
         }
-    }
 
-    private void initBanner(){
-        myloader=new MyImageLoader();
-        banner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR);
-        banner.setImageLoader(myloader);
-        banner.setBannerAnimation(Transformer.ZoomOutSlide);
-        banner.setDelayTime(5000);
-        banner.isAutoPlay(true);
-        banner.setIndicatorGravity(BannerConfig.CENTER);
-
-        banner.setImages(imagepath).setOnBannerListener(new OnBannerListener() {
-            @Override
-            public void OnBannerClick(int position) {
-                switch (position){
-                    case 0:
-                        break;
-                    case 1:
-                        break;
-                    case 2:
-                        break;
-                }
-            }
-        }).start();
     }
 
     private void initPicture(){
-        imagepath=new ArrayList();
-        imagepath.add(R.mipmap.cppcourse);
-        imagepath.add(R.mipmap.javacourse);
-        imagepath.add(R.mipmap.pythoncourse);
+        imagepath=new ArrayList<>();
+        imagepath.add(new Images(R.mipmap.cppcourse));
+        imagepath.add(new Images(R.mipmap.javacourse));
+        imagepath.add(new Images(R.mipmap.pythoncourse));
 
     }
-    class MyImageLoader extends ImageLoader{
 
-        @Override
-        public void displayImage(Context context, Object path, ImageView imageView) {
-            Glide.with(context.getApplicationContext()).load(path).into(imageView);
+    //增删改查
+    private void insert(CourseIndro ci) {
+        CourseDB.getInstance(this.getContext()).getCourseDao().insert(ci);
 
-        }
+    }
+    private void update(CourseIndro ci) {
+        CourseDB.getInstance(this.getContext()).getCourseDao().update(ci);
+    }
+    private void delete(CourseIndro ci){
+        CourseDB.getInstance(this.getContext()).getCourseDao().delete(ci);
+    }
+    private List<CourseIndro> query(){
+        return CourseDB.getInstance(this.getContext()).getCourseDao().getCourseIndro();
     }
 }

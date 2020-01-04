@@ -17,8 +17,7 @@ import java.util.List;
 
 public class SelfFragment extends Fragment {
 
-    private ArrayList<ArrayList<Course>> iData;
-    private ArrayList<Course> lData;
+    private ArrayList<ArrayList<CourseIndro>> iData;
     private ExpandableListView exlist_lol;
     private CourselistAdapter myAdapter = null;
 
@@ -33,12 +32,20 @@ public class SelfFragment extends Fragment {
         gData.add(new Coursegroup("即将开始的课程"));
         gData.add(new Coursegroup("已经结束的课程"));
 
-        iData = new ArrayList<ArrayList<Course>>();
-
-        lData = new ArrayList<Course>();
-        lData.add(new Course("英语",R.mipmap.english_icon));
-        lData.add(new Course("概率论",R.mipmap.gailvlun_icon));
+        iData = new ArrayList<ArrayList<CourseIndro>>();
+//正在进行的课程
+        ArrayList<CourseIndro> lData = new ArrayList<CourseIndro>();
+        lData.add(new CourseIndro(1,"英语",R.mipmap.english_icon));
+        lData.add(new CourseIndro(2,"概率论",R.mipmap.gailvlun_icon));
         iData.add(lData);
+        //即将开始的课程
+        ArrayList<CourseIndro> Data2 = new ArrayList<CourseIndro>();
+        Data2.add(new CourseIndro(1,"python",R.mipmap.python_icon));
+        iData.add(Data2);
+//已经结束的课程
+        ArrayList<CourseIndro> Data3=new ArrayList<>();
+        Data3.add(new CourseIndro(1,"java",R.mipmap.java_icon));
+        iData.add(Data3);
 
         myAdapter = new CourselistAdapter(gData,iData,getContext());
         exlist_lol.setAdapter(myAdapter);

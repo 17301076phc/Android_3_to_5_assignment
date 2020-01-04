@@ -12,10 +12,10 @@ import java.util.ArrayList;
 
 public class CourselistAdapter extends BaseExpandableListAdapter {
     private ArrayList<Coursegroup> gData;
-    private ArrayList<ArrayList<Course>> iData;
+    private ArrayList<ArrayList<CourseIndro>> iData;
     private Context mContext;
 
-    public CourselistAdapter(ArrayList<Coursegroup> gData,ArrayList<ArrayList<Course>> iData, Context mContext) {
+    public CourselistAdapter(ArrayList<Coursegroup> gData,ArrayList<ArrayList<CourseIndro>> iData, Context mContext) {
         this.gData = gData;
         this.iData = iData;
         this.mContext = mContext;
